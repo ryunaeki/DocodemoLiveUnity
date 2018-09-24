@@ -47,7 +47,10 @@ public class LiveWebSocket : MonoBehaviour {
             m_ws.Send(json);
         }
 
-        m_uol.Update();
+        if (m_uol != null)
+        {
+            m_uol.Update();
+        }
     }
     
     void OnDestroy()

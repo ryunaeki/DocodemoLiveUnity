@@ -263,14 +263,19 @@ public class UserObjectList  {
         const int MAX_INDEX = 9999;
         int nMinIndex = MAX_INDEX;
 
-        foreach (UserObject uo in m_dicPenLight)
+        foreach (UserObject uo in m_dicPenLight.Values)
         {
             if (uo.m_nIndex < MAX_INDEX)
                 nMinIndex = uo.m_nIndex;
         }
 
         if (nMinIndex == MAX_INDEX)
+        {
             nMinIndex = 0;
+        }else
+        {
+            nMinIndex = nMinIndex + 1;
+        }
 
         return nMinIndex;
     }
